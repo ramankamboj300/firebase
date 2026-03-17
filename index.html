@@ -240,13 +240,7 @@ async function fetchFCMTokens() {
     try {
         const response = await fetch('https://app.scholarsgrade.com/api/fcm-token', {
             method: 'GET',
-            mode: 'cors', // Explicitly set CORS mode
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'X-XSRF-TOKEN': decodeURIComponent(xsrfToken) // Ensure token is decoded if necessary
-            },
-            credentials: 'include' 
+          
         });
 
         if (!response.ok) {
